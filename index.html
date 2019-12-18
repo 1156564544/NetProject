@@ -38,7 +38,7 @@
     <li><a href="#" data-nav-section="introductions">Introduction</a></li>
 		<li><a href="#" data-nav-section="features">Demo</a></li>
 		<li><a href="#" data-nav-section="pricing">Principle</a></li>
-		<li><a href="#" data-nav-section="reviews">Implement</a></li>
+		<li><a href="#" data-nav-section="reviews">Implementation</a></li>
     <li><a href="#" data-nav-section="buzu">Download</a></li>
 	  </ul>
 	</div>
@@ -70,13 +70,14 @@
         <div class="row text-center mb100">
             <div class="col-md-8 col-md-offset-2 probootstrap-section-heading">
                 <h2 class="mb30 text-black probootstrap-heading">Introduction</h2>
-                <p>The background of our project is as follows</p>
+                <p>What is UnseenCode?</p>
             </div>
 
         </div>
 
-        <p>We hope to design a new communication method. For this new communication method, we have the following requirements, which are not visible to the human eye, can carry a sufficient amount of information, and have low hardware requirements</p>
-        <p>If we can successfully design such a product, its practical significance is also very obvious, especially for applications such as electronic advertising, it will be free to design patterns and then embed data. So this work is also more important.</p>
+        <p>UnseenCode is a novel way to hide informations in normal pictures.</p>
+        <p>With the most common desktops and mobile phones,anyone can encode and decode on any pictures at hand.</p>
+        <p>The code is "Unseen" to human beings while visible to cameras, which makes it easily to be extracted by an APK.</p>
         <center>
             <img src="img/img3.png" alt="" class="img-responsive probootstrap-shadow">
         </center>
@@ -96,7 +97,7 @@
 	<div class="row text-center mb100">
 	  <div class="col-md-8 col-md-offset-2 probootstrap-section-heading">
 		<h2 class="mb30 text-black probootstrap-heading">Demo</h2>
-        <p>The demo is as follows</p>
+        <p>Videos and pictures from our experiments</p>
 	  </div>
 	</div>
 	<!-- END row -->
@@ -106,12 +107,15 @@
         <!--</div>-->
     <center>
         
-            <h3 class="text-primary probootstrap-heading-2">Demo process</h3>
-            <li class="probootstrap-check "style="color:#000000">First enter the information to be encoded on the PC</li>
-            <li class="probootstrap-check"style="color:#000000">The PC will generate a picture based on the input information</li>
-            <li class="probootstrap-check"style="color:#000000">The mobile phone decodes the picture</li>
+            <h3 class="text-primary probootstrap-heading-2">Full Process</h3>
 
+    </center>
+            <li class="probootstrap-check "style="color:#000000">Select information and pictures to be encoded on the desktop.</li>
+            <li class="probootstrap-check"style="color:#000000">The program will generate pictures and then  display.</li>
+            <li class="probootstrap-check"style="color:#000000">Set the exposure time in APK according to the refresh rate of the monitor.</li>
+            <li class="probootstrap-check"style="color:#000000">Press "SCAN" button and get the decoding result.</li>
 
+    <center>
         <video width="600" height="360" controls>
             <source src="video/video1.mp4" type="video/mp4">
         </video>
@@ -131,11 +135,17 @@
 
         </div>
         <center>
-            <h3 class="text-primary probootstrap-heading-2">Illustration of UnseenCode system design</h3>
+            <h3 class="text-primary probootstrap-heading-2">How It Works?</h3>
         </center>
 
-        <p style="color:#000000">The encoding end first converts the picture into the CIE color space, divides the picture, and then embeds 0 or 1 for the X component of each block, that is, generates a corresponding frame pair, and finally converts back to the RGB space for alternate display</p>
-        <p style="color:#000000">The decoder also first divides the frame, converts it into CIE space, then calculates △ X, and finally compares △ X with the templates of 0 and 1 to determine the bits contained in the current block.</p>
+        <p style="color:#000000">The program first converts the picture into CIE color space and divides the picture into blocks. Then it embeds 0 or 1
+             in the X component of each block by generating a corresponding frame pair. Finally the frame pair with information are converted back to RGB space.</p>
+        <p style="color:#000000">While displaying the frame pair alternatively more frequently than 
+            Critical Flicker Frequency(CFF), the frame pairs will fuse into the original image, which seems "Unseen" to human beings.  </p>
+        <p style="color:#000000">However, the camera on smart phones ia able to capture the frames independently, as the exposure time is set small enough.
+            The decoder also first divides the frame and converts it into CIE space. Then it calculates △ X, which represents the difference between the X component and
+            Z component of one captured frame. After comparing △ X with the templates of 0 and 1, the decoder determines the bits embedded in the current block,
+            as well as the whole image.</p>
 
 
         <center>
@@ -150,8 +160,8 @@
         </center>
 
         <center>
-            <h3 class="text-primary probootstrap-heading-2">Barcode templates to represent one bit</h3>
-            <p style="color:#000000">We use two barcodes to represent 0 and 1 respectively </p>
+            <h4 class="text-primary probootstrap-heading-2">Barcode templates for one bit</h4>
+            <!-- <p style="color:#000000">We use two barcodes to represent 0 and 1 respectively </p> -->
         </center>
 
 
@@ -170,8 +180,8 @@
      <div class="container">
          <div class="row text-center mb100">
              <div class="col-md-8 col-md-offset-2 probootstrap-section-heading">
-                 <h2 class="mb30 text-black probootstrap-heading">Implement</h2>
-                 <p>The codes of implementation are as follows</p>
+                 <h2 class="mb30 text-black probootstrap-heading">Implementation</h2>
+                 <p>How to make the idea come true</p>
              </div>
 
 
@@ -203,7 +213,7 @@
 
 
          <center>
-             <h3 class="text-primary probootstrap-heading-2">Posting pictures</h3>
+             <h3 class="text-primary probootstrap-heading-2">Getting pictures</h3>
              <img src="img/code5.png" alt="" class="img-responsive probootstrap-shadow">
          </center>
 
